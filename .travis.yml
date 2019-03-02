@@ -21,7 +21,7 @@ env:
   matrix:
   - HOST=x86_64-apple-darwin14 PACKAGES="cmake imagemagick libcap-dev librsvg2-bin
     libz-dev libbz2-dev libtiff-tools python-dev zip unzip libc6-dev libc6-dev-amd64"
-    BITCOIN_CONFIG="--enable-gui --enable-reduce-exports --disable-tests --disable-bench --with-bignum=no" OSX_SDK=10.11
+    BITCOIN_CONFIG="--enable-gui --enable-reduce-exports --disable-tests --disable-bench" OSX_SDK=10.11
     GOAL="deploy"
 before_install:
 - travis_retry sudo apt-get install python-dev
