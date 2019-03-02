@@ -21,8 +21,8 @@ env:
   matrix:
   - HOST=x86_64-apple-darwin14 PACKAGES="cmake imagemagick libcap-dev librsvg2-bin
     libz-dev libbz2-dev libtiff-tools python-dev zip unzip libc6-dev libc6-dev-amd64"
-    BITCOIN_CONFIG="--enable-gui --enable-reduce-exports --disable-tests --disable-bench" OSX_SDK=10.11
-    GOAL="deploy"
+    BITCOIN_CONFIG="--enable-gui --enable-reduce-exports --disable-tests --disable-bench"
+    OSX_SDK=10.11 GOAL="deploy"
 before_install:
 - travis_retry sudo apt-get install python-dev
 - export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" |  sed
@@ -71,7 +71,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: W1pvF1NheypxqdJF42HijuFPonwOIoRmTMlFTWitchdOqdC28II8iCDo9+b8j6wdUYccND98GO+l1gqaLYbqF7LD32UZBKNbn7CKci3hOsxB/dYexZmDCfd1rabe4rdC/BDwIP+KJhYAIZUHGWLRo3m2D6KdK1Cq3NAIvWogPWqiHWf+3peCT2jTpOUus7EGKc44Z3xHBeZbRkhrz5axT6sJ36gR4tyGYE/r6bTEjbFJJ/uV683+7Ci2vO1VhshUxsR3gbruturhFZXgxWPIsSuyUaayMMyVFVvkJNYH7xMeeB7FX+u2YG4luKgK/N8rhRj7bSdkhi3wpdQadlCRLtx5u8BLaBKffDhcg0LFTvCWwPSd90AJLSx4ynHnbWJmcCh3yeOV0mTQ+RkyzLr8R7V5g4EsR449xB4HcZIPtE3MNOAq9vX1KAQ2yzGF6ckhF1x0UI1yiZgAyFhhXjMptayktFbxVDj87jPi97srOSTU4YHZ67letNo9aTC49X/rSVf9rM9sn2ns4OrIGKUwkYJkdSGF3HA6BvJyd6VCUuwKxmm+s8EVHMpCHRcCQ7g8YXACxXQi9g/HrZKh52E8mRRw7rQ2HTF8DZ2xg7QS48Yv1mnY7Ykdr/mgliVIJqPXsr0MdyXMG7TtqGgNAJJ4Fp+l8HY/k6qcI4fgSDPAIB4=
+    secure: qyWI/JOXalKsfedRATnO3wk2+ARlEYxTuB0JsiWE3le6lS20AEAwipgnuQSGjAK0Wsrhom3yem/DTmo7QgkIbHtUcnfPM7w0EfTv6ZHqKVQ7lw/JliCi7JC2Hr+qRY9oEcx+DeuLZvX5BsRIEWM5O8oY4v+7VjbvaxqD3Q7f/CFcFfO445tGhARzv7iMQ+b5Dstb5IyyJXPWvBbCsZJzwfC+r8dfjypL5UiyjaW5hrzgxrV7QkSoQXFRc1/WMuMcv2k+wh7842hoWhdsUb14w+SbKk6hpWf6m2xsPhKq+EG6DRjf8LaAtvO1fbj11k2riPJJ5ZWlxHlRmcLKRj8HtwzYwg4eOU1XmujClU0zJ9hJ9oR/g47nZeHHYoEjmMhaDKOG8uv6S1ckbHevT8r/ywbG0bVqE/nh7lJa79K8Vo+IJi3P9gzi/dkcu8VnXt3JhV7aZD4ZCT2Lsr/PghukURhpz+bIaASnNTaJdxgunLsqlz9OluPIxjOAoHr7AFER+9KYxcX0W8rrV61r7+oZfQxcHtsSMU4tqeyNDpWWaL1LPegBpY7Pz9L06XVE1Kde9XP8D8D2IRttJKOUpV+0dAJrvq6g0ZwP1ThY+XsG/wV1Y3GS7FXNDPJMxjfU+xLXpW7jdlFGw1jsNdy08UlNoKyXHN3i1ToNshXMv7loaVg=
   file: "$FILE"
   on:
     repo: ScaMar/source-1
